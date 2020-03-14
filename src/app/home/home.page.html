@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+    </ion-header>
+
+    <div id="container">
+        <ion-icon class="icon-logo" name="logo-ionitron"></ion-icon>
+        <h1>Login</h1>
+        <ion-list class="SignUp">
+
+            <ion-item>
+                <ion-input placeholder="Email" type="email" [value]="email" [(ngModel)]="email"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-input placeholder="Password" type="password" [value]="password" [(ngModel)]="password"></ion-input>
+            </ion-item>
+
+        </ion-list>
+        <ion-button style="height: 40px; margin-top: 10px;" outline (click)='login("email");'>Login</ion-button>
+
+        <ion-button class="bt-LoginFB" style="height: 40px;" expand="block" icon-left (click)='login("fb");'>
+            <ion-icon name="logo-facebook"></ion-icon> Login with Facebook
+        </ion-button>
+        <button ion-button [routerLink]="['/sign-up']">Don't have an account?</button>
+    </div>
+</ion-content>
