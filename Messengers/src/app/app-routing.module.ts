@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'index', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home',
    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
@@ -21,6 +21,18 @@ const routes: Routes = [
   {
     path: 'tab-people',
     loadChildren: () => import('./tab-people/tab-people.module').then( m => m.TabPeoplePageModule)
+  },
+  {
+    path: 'home-chatbox',
+    loadChildren: () => import('./home-chatbox/home-chatbox.module').then( m => m.HomeChatboxPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'profile-friend',
+    loadChildren: () => import('./profile-friend/profile-friend.module').then( m => m.ProfileFriendPageModule)
   },
 ];
 
