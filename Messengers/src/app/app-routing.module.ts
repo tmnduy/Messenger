@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'tab-chatbubble', pathMatch: 'full' },
   { path: 'home',
    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
@@ -33,6 +33,10 @@ const routes: Routes = [
   {
     path: 'profile-friend',
     loadChildren: () => import('./profile-friend/profile-friend.module').then( m => m.ProfileFriendPageModule)
+  },
+  {
+    path: 'account-modal',
+    loadChildren: () => import('./account-modal/account-modal.module').then( m => m.AccountModalPageModule)
   },
 ];
 

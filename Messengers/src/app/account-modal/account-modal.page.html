@@ -1,0 +1,26 @@
+<ion-header translucent>
+    <ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-button (onclick)="closeModal()">Close</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div class="container">
+        <div class="avatar">
+            <ion-avatar>
+                <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+            </ion-avatar>
+            <ion-label>Name</ion-label>
+        </div>
+        <ion-list>
+            <ion-item>
+                <ion-label style="font-family: 'Times New Roman', Times, serif;">Chế độ tối</ion-label>
+                <ion-toggle color="dark" checked></ion-toggle>
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>
+<ion-footer style="background-color: white;">
+    <ion-button expand="block" (click)="presentAlert()">Đăng xuất</ion-button>
+</ion-footer>
