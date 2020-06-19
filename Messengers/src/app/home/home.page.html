@@ -19,9 +19,9 @@
             </ion-item>
 
         </ion-list>
-        <ion-button style="height: 40px; margin-top: 10px;" outline (click)='login("email");'>Login</ion-button>
+        <ion-button style="height: 40px; margin-top: 10px;" outline (click)='login();'>Login</ion-button>
 
-        <ion-button class="bt-LoginFB" style="height: 40px;" expand="block" icon-left (click)='login("fb");'>
+        <ion-button class="bt-LoginFB" style="height: 40px;" expand="block" icon-left (click)='loginfb();'>
             <ion-icon name="logo-facebook"></ion-icon> Login with Facebook
         </ion-button>
         <button ion-button [routerLink]="['/sign-up']">Don't have an account?</button>
