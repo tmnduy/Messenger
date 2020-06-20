@@ -45,6 +45,7 @@ export class AccountModalPage implements OnInit {
                 // An error happened.
               });
             this.route.navigateByUrl("/home");
+            this.closeModal();
           },
         },
         {
