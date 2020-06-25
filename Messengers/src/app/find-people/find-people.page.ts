@@ -1,25 +1,38 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from "@angular/router";
 import * as firebase from "firebase";
-import { element, Key } from 'protractor';
+import { element } from 'protractor';
 
 @Component({
-  selector: 'app-tab-people',
-  templateUrl: './tab-people.page.html',
-  styleUrls: ['./tab-people.page.scss'],
+  selector: 'app-find-people',
+  templateUrl: './find-people.page.html',
+  styleUrls: ['./find-people.page.scss'],
 })
-export class TabPeoplePage implements OnInit {
-
-  constructor(public router:Router) { }
-
-  open(){
-    this.router.navigateByUrl("home-chatbox");
-  }
-
-  openprofile(){
-    this.router.navigateByUrl("contact");
-  }
+export class FindPeoplePage implements OnInit {
   db = firebase.database()
+
+  constructor() { }
+  
+  indexid: string;
+  a: string;
+  checkcancel(item){
+    var add = document.getElementById(item.email)
+    var cancel = document.getElementById(item.name)
+    add.style.display = "block"
+    cancel.style.display = 'none'
+  }
+  checkadd(item){
+      
+    var add = document.getElementById(item.email)
+    var cancel = document.getElementById(item.name)
+    add.style.display = "none"
+    cancel.style.display = 'block'
+  }
+
+  ngOnInit() {
+    this.init();
+
+  }
+  list:any
   thislist:any
   statuslist:any
   listShow=[]
@@ -48,11 +61,4 @@ export class TabPeoplePage implements OnInit {
     })
 
   }
-
-
-  ngOnInit() {
-    
-    this.init();
-  }
-
 }

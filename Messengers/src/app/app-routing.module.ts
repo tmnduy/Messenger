@@ -58,6 +58,14 @@ const routes: Routes = [
         (m) => m.AccountModalPageModule
       ),
   },
+  {
+    path: 'find-people',
+    loadChildren: () => import('./find-people/find-people.module').then( m => m.FindPeoplePageModule)
+  },
+  {
+    path: 'contact',
+    loadChildren: () => import('./contact/contact.module').then( m => m.ContactPageModule)
+  },
 ];
 
 @NgModule({

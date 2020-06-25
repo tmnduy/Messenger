@@ -2,15 +2,19 @@
 
     <ion-toolbar>
         <!-- Avatar -->
-        <div>
-            <ion-back-button text="" icon="chevron-back" defaultHref="/index"></ion-back-button>
-            <div class="avatar-chat">
-                <ion-avatar>
+        
+            <ion-buttons slot="start">
+                <ion-back-button text="" icon="chevron-back" defaultHref="/index" (click)="deleteDes()"></ion-back-button>
+            </ion-buttons>
+            <div class="avatar-chat" *ngFor="let item of listShow" >
+                <ion-avatar >
                     <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
                 </ion-avatar>
-                <ion-label> Avatar</ion-label>
+                <ion-label><h2 id="inboxname">&nbsp;{{item.name}}</h2></ion-label>
             </div>
-        </div>
+        
+
+        
         <div class="call">
             <ion-icon name="call"></ion-icon>
             <ion-icon name="videocam"></ion-icon>
@@ -20,6 +24,45 @@
 </ion-header>
 
 <ion-content>
+    
+    <ion-list *ngFor="let item of chatlist">
+        <ion-item class="item1" color="secondary"  *ngIf="item.sentemail == sentemail && item.desemail == desemail ">
+                <ion-label >{{item.text}}</ion-label>
+        </ion-item>
+    
+
+        <ion-item class="item2" color="medium" *ngIf="item.desemail == sentemail && item.sentemail == desemail">
+            <div>
+                <ion-label>{{item.text}}</ion-label>
+            </div>
+        </ion-item>
+    </ion-list>
+    
+
+    <!-- <ion-list>
+        <ion-item *ngFor="let chat of chats" no-lines>
+          <div class="chat-status" text-center *ngIf="chat.type==='join'||chat.type==='exit';else message">
+            <span class="chat-date">{{chat.sendDate | date:'short'}}</span>
+            <span class="chat-content-center">{{chat.message}}</span>
+          </div>
+          <ng-template #message>
+            <div class="chat-message" text-right *ngIf="chat.user === nickname">
+              <div class="right-bubble">
+                <span class="msg-name">Me</span>
+                <span class="msg-date">{{chat.sendDate | date:'short'}}</span>
+                <p text-wrap>{{chat.message}}</p>
+              </div>
+            </div>
+            <div class="chat-message" text-left *ngIf="chat.user !== nickname">
+              <div class="left-bubble">
+                <span class="msg-name">{{chat.user}}</span>
+                <span class="msg-date">{{chat.sendDate | date:'short'}}</span>
+                <p text-wrap>{{chat.message}}</p>
+              </div>
+            </div>
+          </ng-template>
+        </ion-item>
+      </ion-list> -->
 </ion-content>
 
 <!-- Chat-Input -->
@@ -27,10 +70,10 @@
     <ion-grid>
         <ion-row style="margin-right: -20px;">
             <ion-col size="10" style="margin-right: -15px;">
-                <ion-input type="text" placeholder="Aa"></ion-input>
+                <ion-input type="text" placeholder="Aa" [(ngModel)]="text" id="input"></ion-input>
             </ion-col>
             <ion-col size="2">
-                <ion-icon name="paper-plane"></ion-icon>
+                <ion-icon name="paper-plane" (click)="send()"></ion-icon>
             </ion-col>
         </ion-row>
     </ion-grid>
