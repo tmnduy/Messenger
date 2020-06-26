@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 
 const routes: Routes = [
+  { path: "", redirectTo: "home", pathMatch: "full" },
   {
     path: "home",
     loadChildren: () =>
@@ -58,12 +59,16 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'find-people',
-    loadChildren: () => import('./find-people/find-people.module').then( m => m.FindPeoplePageModule)
+    path: "find-people",
+    loadChildren: () =>
+      import("./find-people/find-people.module").then(
+        (m) => m.FindPeoplePageModule
+      ),
   },
   {
-    path: 'contact',
-    loadChildren: () => import('./contact/contact.module').then( m => m.ContactPageModule)
+    path: "contact",
+    loadChildren: () =>
+      import("./contact/contact.module").then((m) => m.ContactPageModule),
   },
 ];
 

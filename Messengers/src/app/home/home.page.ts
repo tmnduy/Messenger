@@ -4,12 +4,6 @@ import { Facebook, FacebookLoginResponse } from "@ionic-native/facebook/ngx";
 
 import * as firebase from "firebase";
 import { Platform, AlertController } from "@ionic/angular";
-import {
-  FormGroup,
-  FormBuilder,
-  FormControl,
-  Validators,
-} from "@angular/forms";
 
 @Component({
   selector: "app-home",
@@ -17,7 +11,6 @@ import {
   styleUrls: ["home.page.scss"],
 })
 export class HomePage implements OnInit {
-  validations_form: FormGroup;
   email: string;
   password: string;
   provider = new firebase.auth.FacebookAuthProvider();
@@ -41,8 +34,7 @@ export class HomePage implements OnInit {
     public Router: Router,
     private fb: Facebook,
     private platform: Platform,
-    private alert: AlertController,
-    private formBuilder: FormBuilder
+    private alert: AlertController
   ) {}
 
   ngOnInit() {
