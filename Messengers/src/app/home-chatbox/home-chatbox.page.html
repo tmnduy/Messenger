@@ -1,12 +1,11 @@
 <ion-header>
-
     <ion-toolbar>
         <!-- Avatar -->
         <div>
             <ion-back-button text="" icon="chevron-back" defaultHref="/index"></ion-back-button>
-            <div class="avatar-chat">
+            <div class="avatar-chat" (click)="OpenProfileFriend()">
                 <ion-avatar>
-                    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+                    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
                 </ion-avatar>
                 <ion-label> Avatar</ion-label>
             </div>
@@ -16,11 +15,9 @@
             <ion-icon name="videocam"></ion-icon>
         </div>
     </ion-toolbar>
-
 </ion-header>
 
-<ion-content>
-</ion-content>
+<ion-content> </ion-content>
 
 <!-- Chat-Input -->
 <ion-footer style="background-color: white;">

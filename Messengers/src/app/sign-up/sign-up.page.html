@@ -5,10 +5,9 @@
 </ion-header>
 
 <ion-content>
-    <!-- <form onsubmit="processForm(event)"> -->
     <ion-list lines="full" class="ion-no-margin ion-no-padding">
         <ion-item>
-            <ion-label position="stacked">Full Name
+            <ion-label position="floating">Full Name
                 <ion-text color="danger">*</ion-text>
             </ion-label>
             <ion-input required type="text" oninput="handleFirstNameValue(event)"></ion-input>
@@ -28,7 +27,9 @@
         </ion-item>
 
         <ion-item>
-            <ion-label>Gender</ion-label>
+            <ion-label>Gender
+                <ion-text color="danger">*</ion-text>
+            </ion-label>
             <ion-select placeholder="Select One">
                 <ion-select-option value="female">Female</ion-select-option>
                 <ion-select-option value="male">Male</ion-select-option>
@@ -37,7 +38,9 @@
         </ion-item>
 
         <ion-item>
-            <ion-label>Birthday</ion-label>
+            <ion-label>Birthday
+                <ion-text color="danger">*</ion-text>
+            </ion-label>
             <ion-datetime value="1990-02-19" placeholder="Select Date"></ion-datetime>
         </ion-item>
 
@@ -46,11 +49,10 @@
             <ion-input></ion-input>
         </ion-item>
 
-        <ion-item>
+        <!-- <ion-item>
             <ion-label position="floating">Address</ion-label>
             <ion-input></ion-input>
-        </ion-item>
-
+        </ion-item> -->
         <div class="ion-padding">
             <ion-button expand="block" type="submit" class="ion-no-margin" (click)="SignUp()">Create account</ion-button>
         </div>
@@ -58,4 +60,4 @@
             <button ion-button [routerLink]="['/home']">Bạn đã có tài khoản</button>
         </div>
     </ion-list>
-    <!-- </form> -->
+</ion-content>

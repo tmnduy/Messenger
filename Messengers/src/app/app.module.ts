@@ -16,6 +16,7 @@ import { AngularFireStorageModule } from "@angular/fire/storage";
 import { AngularFireAuth } from "@angular/fire/auth";
 import { Facebook } from "@ionic-native/facebook/ngx";
 import * as firebase from "firebase";
+import { FormBuilder, FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 firebase.initializeApp(environment.firebaseConfig);
 
