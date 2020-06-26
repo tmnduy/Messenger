@@ -1,5 +1,5 @@
 import { AngularFireModule } from "@angular/fire";
-import { Router } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
 import { HomePage } from "../home/home.page";
 import { AngularFireAuth } from "@angular/fire/auth";
@@ -14,14 +14,14 @@ import { AlertController } from "@ionic/angular";
 export class SignUpPage implements OnInit {
   email: string;
   password: string;
-  constructor(
-    public route: Router,
-    public afuth: AngularFireAuth,
-    public alert: AlertController
-  ) {}
+  name: string;
+  birthday: Date;
+  phone: string;
+  address: string;
+  constructor(public route: Router, public afuth: AngularFireAuth, public alert: AlertController) {}
   ngOnInit() {}
   controller = document.querySelector("ion-alert-controller");
-
+  check = false;
   // processForm(event) {
   //   event.preventDefault();
   //   this.controller.create({
@@ -32,6 +32,43 @@ export class SignUpPage implements OnInit {
   //     }]
   //   }).then(alert => alert.present());
   // }
+  SignUp() {
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(this.email, this.password)
+      .then(() => {
+        this.AlertSuccess();
+        this.route.navigate(["home"]);
+        // this.check = true;
+        this.route.navigateByUrl('home');
+      })
+      .catch((error) => {
+                // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+        this.AlertError();
+        console.log(errorMessage);
+        console.log(errorCode);
+      });
+
+      firebase.database().ref('Profile').push({
+        email: this.email,
+        name: this.name,
+        birthday: this.birthday,
+        phone: this.phone,
+        address: this.phone,
+      }).then(()=>{
+        console.log('success');
+      })
+
+  //     if (this.check==true)
+  //     {
+  //       this.route.navigateByUrl('home');
+  //     }
+  }
+
+
   async AlertSuccess() {
     const alert = await this.alert.create({
       cssClass: "my-custom-class",
@@ -51,26 +88,6 @@ export class SignUpPage implements OnInit {
     });
 
     await alert.present();
-  }
-
-  SignUp() {
-    firebase
-      .auth()
-      .createUserWithEmailAndPassword(this.email, this.password)
-      .then(() => {
-        this.AlertSuccess();
-        this.route.navigate(["home"]);
-      })
-      .catch((error) => {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ...
-
-        this.AlertError();
-        console.log(errorMessage);
-        console.log(errorCode);
-      });
   }
 
   handleFirstNameValue(event) {}

@@ -1,34 +1,41 @@
 .avatar-chat {
-    width: 38%;
-    margin-top: -20px;
+    // width: 38%;
+    // margin-top: -20px;
     ion-avatar {
-        width: 40px;
-        height: 40px;
-        padding-left: 10px;
-        padding-bottom: 10px;
-        margin-left: 20px;
+        width: 30px;
+        height: 30px;
+        // padding-left: 10px;
+        // padding-bottom: 10px;
+        // margin-left: 20px;
+        float: left;
     }
     ion-label {
-        float: right;
-        margin-top: -35px;
+//         float: left;
+//         margin-top: -35px;
+    float: left;
+    
+
     }
 }
 
-ion-back-button {
-    width: 30px;
-    height: 20px;
-    padding-left: -2px;
-    padding-right: 5px;
-    padding-top: 10px;
-    color: rgb(57, 138, 243);
-}
+// ion-back-button {
+    // width: 30px;
+    // height: 20px;
+    // padding-left: -2px;
+    // padding-right: 5px;
+    // padding-top: 10px;
+    // color: rgb(57, 138, 243);
+    // position: absolute;
+// }
 
 .call {
+
+    clear: both;
     float: right;
-    margin-top: -40px;
+    margin-top: -30px;
     ion-icon {
-        width: 20px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
         margin-right: 15px;
         color: rgb(57, 138, 243);
     }
@@ -58,4 +65,14 @@ ion-footer {
     }
 }
 
-//
+.item1 {
+    width: fit-content;
+    margin-left: auto;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.item2{
+    width: fit-content;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}

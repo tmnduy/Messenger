@@ -5,14 +5,14 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "AIzaSyCwQgbP_5i67q5CsNkQqocwoB6WAcXgvFw",
-    authDomain: "chatbox-dfa74.firebaseapp.com",
-    databaseURL: "https://chatbox-dfa74.firebaseio.com",
-    projectId: "chatbox-dfa74",
-    storageBucket: "chatbox-dfa74.appspot.com",
-    messagingSenderId: "811671177792",
-    appId: "1:811671177792:web:6b7596d5650318231feda5",
-    measurementId: "G-2JFQS5HQFQ",
+    apiKey: "AIzaSyB4PMD7Idd5Nqp3IIatWEhOSjmrmn1275s",
+    authDomain: "fir-test-65941.firebaseapp.com",
+    databaseURL: "https://fir-test-65941.firebaseio.com",
+    projectId: "fir-test-65941",
+    storageBucket: "fir-test-65941.appspot.com",
+    messagingSenderId: "31589487467",
+    appId: "1:31589487467:web:18acf86687263fb9c5f22e",
+    measurementId: "G-ZH4HEP0DXH"
   },
 };
 
